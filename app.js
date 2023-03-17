@@ -14,7 +14,7 @@ app.post("/*", (req, res) => {
 
   const { body } = req;
 //   console.log(req);
-//   console.log(body);
+  console.log({body});
   axios.post(url, body, {headers: {authorization: header?.authorization}})
   .then(response =>{
       res.status(200).json(response.data);
@@ -22,6 +22,7 @@ app.post("/*", (req, res) => {
   })
   .catch(err =>{
     res.status(400).json(err);
+    console.log(err)
   })
 });
 
